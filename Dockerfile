@@ -1,32 +1,26 @@
-FROM node:0.10
+FROM node:0.12
 
-RUN mkdir -p /usr/src/app
-WORKDIR /usr/src/app
+MAINTAINER Zac Chung
 
-RUN npm install -g mean-cli bower gulp
+RUN apt-get update && \
+	apt-get install -y ssh vim 
 
-RUN	groupadd -r node \
-&&	useradd -r -m -g node node
+RUN npm install -g mean-cli && \
+	npm install -g bower && \
+	npm install -g gulp && \
+    npm install -g browser-sync && \
+	useradd -m mean
 
-COPY . /usr/src/app/
-RUN rm -rf /usr/src/app/node_modules
-RUN chown -R node:node /usr/src/app
+RUN unlink /etc/localtime && ln -s /usr/share/zoneinfo/Asia/Taipei /etc/localtime
 
-USER node
-RUN touch /home/node/.mean
-RUN npm install 
-ENV PORT 3000  
-ENV DB_PORT_27017_TCP_ADDR db
-CMD [ "npm", "start" ]
-EXPOSE 3000
+ADD . /home/mean
 
+RUN chown mean:mean -R /home/mean
 
-#How to build:
-# git clone https://github.com/linnovate/mean
-# cd mean
-# docker build -t mean .
+USER mean
 
-#How to run:
-# docker pull mongo
-# docker run -d --name db mongo
-# docker run -p 3000:3000 --link db:db mean
+WORKDIR /home/mean
+
+RUN npm install
+
+CMD ["gulp", "production"]

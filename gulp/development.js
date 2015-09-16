@@ -52,7 +52,7 @@ gulp.task('devServe', ['env:development'], function () {
     ext: 'html js',
     env: { 'NODE_ENV': 'development' } ,
     ignore: ['node_modules/', 'bower_components/', 'logs/', 'packages/*/*/public/assets/lib/', 'packages/*/*/node_modules/', '.DS_Store', '**/.DS_Store', '.bower-*', '**/.bower-*'],
-    nodeArgs: ['--debug'],
+    nodeArgs: ['--debug=5861'],
     stdout: false
   }).on('readable', function() {
     this.stdout.on('data', function(chunk) {
@@ -72,7 +72,10 @@ gulp.task('coffee', function() {
 });
 
 gulp.task('watch', function () {
-  plugins.livereload.listen({interval:500});
+  plugins.livereload.listen({
+      interval:500,
+      port: 35732
+  });
 
   gulp.watch(paths.coffee,['coffee']);
   gulp.watch(paths.js, ['jshint']);
