@@ -50,6 +50,9 @@ case $1 in
     pullFtp)
         wget --user "7755" --password "7755@2014" ftp://ftp.kyec.com.tw/Alpha_Info/alpha-webapp-$BIAPP_VERSION.tar
         ;;
+    startGulp)
+        LIVERELOAD_PORT=35729 DEBUG_PORT=5858 PORT=3000 DB_PORT_27017_TCP_ADDR=127.0.0.1 gulp
+        ;;
     *)
         echo "$(basename $0) :USAGE: [build]"
         exit 1
