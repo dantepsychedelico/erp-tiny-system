@@ -79,5 +79,3 @@ modules/views/
 # Mean PID
 # -------------------
 mean.pid
-
-ovenInfo.json
