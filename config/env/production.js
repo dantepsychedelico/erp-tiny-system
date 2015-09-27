@@ -31,7 +31,7 @@ module.exports = {
     name: 'MEAN - A Modern Stack - Production'
   },
   logging: {
-    format: 'combined'
+    format: ':remote-addr - :remote-user [:date[clf]] ":method :url HTTP/:http-version" :status :res[content-length] ":referrer" ":user-agent" :response-time'
   },
   strategies: {
     local: {
