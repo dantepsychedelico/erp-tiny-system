@@ -74,7 +74,7 @@ gulp.task('coffee', function() {
 gulp.task('watch', function () {
   plugins.livereload.listen({
       interval:500,
-      port: process.env.LIVERELOAD_PORT || 35729
+      port: process.env.LIVERELOAD_PORT ? parseInt(process.env.LIVERELOAD_PORT) : 35729
   });
 
   gulp.watch(paths.coffee,['coffee']);
