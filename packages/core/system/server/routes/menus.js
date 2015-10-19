@@ -17,7 +17,7 @@ module.exports = function(System, app, auth, database) {
             } else if (menu === 'modules') {
                 menu = 'main'
                 tmpMenu = 'modules';
-            };
+            }
 
 
             if (!Array.isArray(defaultMenu)) defaultMenu = [defaultMenu];

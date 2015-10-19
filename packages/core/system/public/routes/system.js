@@ -28,7 +28,8 @@ angular.module('mean.system').provider('$viewPath', function() {
 });
 
 // $meanStateProvider, provider to wire up $viewPathProvider to $stateProvider
-angular.module('mean.system').provider('$meanState', ['$stateProvider', '$viewPathProvider', function($stateProvider, $viewPathProvider) {
+angular.module('mean.system')
+.provider('$meanState', function($stateProvider, $viewPathProvider) {
   function MeanStateProvider() {
     this.state = function(stateName, data) {
       if (data.templateUrl) {
@@ -44,11 +45,11 @@ angular.module('mean.system').provider('$meanState', ['$stateProvider', '$viewPa
   }
 
   return new MeanStateProvider();
-}]);
+});
 
 //Setting up route
-angular.module('mean.system').config(['$meanStateProvider', '$urlRouterProvider',
-  function($meanStateProvider, $urlRouterProvider) {
+angular.module('mean.system')
+.config(function($meanStateProvider, $urlRouterProvider) {
     // For unmatched routes:
     $urlRouterProvider.otherwise('/');
 
@@ -66,11 +67,10 @@ angular.module('mean.system').config(['$meanStateProvider', '$urlRouterProvider'
         }
       });
   }
-]).config(['$locationProvider',
-  function($locationProvider) {
+).config(function($locationProvider) {
     $locationProvider.html5Mode({
       enabled:true,
       requireBase:false
     });
   }
-]);
+);

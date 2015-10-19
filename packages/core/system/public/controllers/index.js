@@ -42,17 +42,5 @@ angular.module('mean.system').controller('IndexController', ['$scope', 'Global',
         'image':'http://cdn.designbyhumans.com/pictures/blog/09-2013/pop-culture-cats/Pop_Culture_Cats_Hamilton_Hipster.jpg'
       }
     };
-
-    $scope.$watch(function () {
-      for (var i = 0; i < $scope.sites.length; i+=1) {
-        if ($scope.sites[i].active) {
-          return $scope.sites[i];
-        }
-      }
-    }, function (currentSlide, previousSlide) {
-      if (currentSlide !== previousSlide) {
-        console.log('currentSlide:', currentSlide);
-      }
-    });
   }
 ]);

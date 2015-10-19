@@ -8,6 +8,9 @@ module.exports = {
   },
   //  aggregate: 'whatever that is not false, because boolean false value turns aggregation off', //false
   aggregate: false,
+  assets: {
+    hash: false
+  },
   mongoose: {
     debug: process.env.MONGO_DEBUG ? 
       JSON.parse(process.env.MONGO_DEBUG) : false

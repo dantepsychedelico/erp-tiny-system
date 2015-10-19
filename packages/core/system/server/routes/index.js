@@ -11,9 +11,9 @@ module.exports = function(System, app, auth, database) {
   app.route('/api/aggregatedassets')
     .get(index.aggregatedList);
 
-  app.get('/*',function(req,res,next){
-        res.header('workerID' , JSON.stringify(mean.options.workerid) );
-        next(); // http://expressjs.com/guide.html#passing-route control
+  app.get('/*', function(req,res,next){ 
+    res.header('workerID' , JSON.stringify(mean.options.workerid) );
+    next(); // http://expressjs.com/guide.html#passing-route control
   });
 
   app.get('/api/get-public-config', function(req, res){

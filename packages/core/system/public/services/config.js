@@ -1,4 +1,7 @@
-angular.module('mean.system').provider('$meanConfig', [function() {
+'use strict';
+
+angular.module('mean.system')
+.provider('$meanConfig', function() {
   function MeanConfigProvider() {
     this.config = {};
 
@@ -11,7 +14,7 @@ angular.module('mean.system').provider('$meanConfig', [function() {
       }
     }
 
-    xmlhttp.open("GET", "/api/get-public-config", false);
+    xmlhttp.open('GET', '/api/get-public-config', false);
     xmlhttp.send();
 
     this.$get = function() {
@@ -20,4 +23,4 @@ angular.module('mean.system').provider('$meanConfig', [function() {
   }
 
   return new MeanConfigProvider();
-}]);
+});

@@ -45,9 +45,6 @@ module.exports = {
     languages: [{
       locale: 'en',
       direction: 'ltr',
-    }, {
-      locale: 'he',
-      direction: 'rtl',
     }],
     currentLanguage: 'en',
     cssFramework: 'bootstrap'

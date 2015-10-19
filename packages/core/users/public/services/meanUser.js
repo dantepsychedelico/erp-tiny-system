@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('mean.users').factory('MeanUser', [ '$rootScope', '$http', '$location', '$stateParams', '$cookies', '$q', '$timeout',
-  function($rootScope, $http, $location, $stateParams, $cookies, $q, $timeout) {
+angular.module('mean.users')
+.factory('MeanUser', function($rootScope, $http, $location, $stateParams, $cookies, $q, $timeout) {
 
     var self;
 
@@ -17,23 +17,6 @@ angular.module('mean.users').factory('MeanUser', [ '$rootScope', '$http', '$loca
     function b64_to_utf8( str ) {
       return decodeURIComponent(escape(window.atob( str )));
     }
-
-    /*function url_base64_decode(str) {
-      var output = str.replace('-', '+').replace('_', '/');
-      switch (output.length % 4) {
-      case 0:
-      break;
-      case 2:
-      output += '==';
-      break;
-      case 3:
-      output += '=';
-      break;
-      default:
-      throw 'Illegal base64url string!';
-      }
-      return window.atob(output); //polifyll https://github.com/davidchambers/Base64.js
-    }*/
 
     function MeanUserKlass(){
       this.name = 'users';
@@ -203,4 +186,4 @@ angular.module('mean.users').factory('MeanUser', [ '$rootScope', '$http', '$loca
 
     return MeanUser;
   }
-]);
+);
