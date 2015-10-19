@@ -31,13 +31,13 @@ MeanUser.register(function(app, database, passport) {
         global: true
     });
 
-    MeanUser.auth = require('./authorization');
+    MeanUser.auth = {};
     require('./passport')(passport);
 
     mean.register('auth', MeanUser.auth);
 
     //We enable routing. By default the Package Object is passed to the routes
-    MeanUser.routes(app, MeanUser.auth, database, passport);
+//     MeanUser.routes(app, MeanUser.auth, database, passport);
 
     MeanUser.angularDependencies(['angular-jwt']);
 
