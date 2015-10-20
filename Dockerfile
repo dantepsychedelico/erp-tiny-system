@@ -1,14 +1,12 @@
-FROM node:0.12
+FROM node:4.2.1
 
 MAINTAINER Zac Chung
 
 RUN apt-get update && \
-	apt-get install -y ssh vim 
+	apt-get install -y ssh vim git
 
-RUN npm install -g mean-cli && \
-	npm install -g bower && \
+RUN	npm install -g bower && \
 	npm install -g gulp && \
-    npm install -g browser-sync && \
 	useradd -m mean
 
 RUN unlink /etc/localtime && ln -s /usr/share/zoneinfo/Asia/Taipei /etc/localtime
@@ -21,6 +19,6 @@ USER mean
 
 WORKDIR /home/mean
 
-RUN npm install
+# RUN npm install
 
-CMD ["gulp", "production"]
+# CMD ["gulp", "production"]
