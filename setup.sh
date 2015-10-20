@@ -1,6 +1,6 @@
 #!/bin/bash
 
-APPVERSION=${APPVERSION-$(grep version bower.json | grep -o '[0-9.]*')}
+APPVERSION=${APPVERSION-$(grep version bower.json | grep -o '"[^"]*",' | sed 's/[",]//g')}
 APPNAME=${APPNAME-$(grep name bower.json | grep -o '"[^"]*",' | sed 's/[",]//g')}
 
 case $1 in

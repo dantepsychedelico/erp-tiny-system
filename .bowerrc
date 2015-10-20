@@ -4,5 +4,6 @@
           "packages": ".bower-cache",
           "registry": ".bower-registry"
   },
+  "interactive": false,
   "tmp": ".bower-tmp"
 }

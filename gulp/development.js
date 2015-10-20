@@ -65,9 +65,12 @@ gulp.task('devServe', ['env:development'], function () {
   plugins.nodemon({
     script: 'server.js',
     ext: 'html js',
-    env: { 'NODE_ENV': 'development' } ,
+    env: { 
+      'NODE_ENV': 'development', 
+      'DATABASE': 'cassandra'
+    },
     ignore: ['node_modules/', 'bower_components/', 'logs/', 'packages/*/*/public/assets/lib/', 'packages/*/*/node_modules/', '.DS_Store', '**/.DS_Store', '.bower-*', '**/.bower-*'],
-    nodeArgs: ['--debug=' + (process.env.DEBUG_PORT || 5858 )],
+    nodeArgs: ['--debug=' + (process.env.DEBUG_PORT || 5858 ), '--harmony'],
     stdout: false
   }).on('readable', function() {
     this.stdout.on('data', function(chunk) {

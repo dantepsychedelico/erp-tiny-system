@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = {
-  db: [ process.env.DB_PORT_9042_TCP_ADDR || '127.0.0.1'],
+  db: [ process.env.DB_PORT_9042_TCP_ADDR || '192.168.0.50'],
   debug: true,
   logging: {
     format: ':remote-addr :method :url :status :res[content-length] - :response-time ms'
