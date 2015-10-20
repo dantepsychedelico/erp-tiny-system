@@ -1,7 +1,7 @@
 'use strict';
 
-var mongoose = require('mongoose'),
-  LocalStrategy = require('passport-local').Strategy,
+// var mongoose = require('mongoose'),
+var LocalStrategy = require('passport-local').Strategy,
   TwitterStrategy = require('passport-twitter').Strategy,
   FacebookStrategy = require('passport-facebook').Strategy,
   GitHubStrategy = require('passport-github').Strategy,

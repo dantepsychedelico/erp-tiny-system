@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = {
-  db: 'mongodb://' + (process.env.DB_PORT_27017_TCP_ADDR || 'localhost') +'/'+(process.env.DB_PORT_27017_DATABASE || 'mean-dev'),
+  db: [ process.env.DB_PORT_9042_TCP_ADDR || '127.0.0.1'],
   debug: true,
   logging: {
     format: ':remote-addr :method :url :status :res[content-length] - :response-time ms'
@@ -10,10 +10,6 @@ module.exports = {
   aggregate: false,
   assets: {
     hash: false
-  },
-  mongoose: {
-    debug: process.env.MONGO_DEBUG ? 
-      JSON.parse(process.env.MONGO_DEBUG) : false
   },
   hostname: 'http://localhost:3000',
   app: {
