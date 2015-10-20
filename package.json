@@ -3,13 +3,7 @@
   "description": "MEAN.io: A fullstack JavaScript framework powered by MongoDB, ExpressJS, AngularJS, NodeJS.",
   "version": "0.5.5",
   "private": false,
-  "author": "Linnovate <mean@linnovate.net>",
-  "contributors": "https://github.com/linnovate/mean/graphs/contributors",
   "mean": "0.5.5",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/linnovate/mean.git"
-  },
   "scripts": {
     "start": "node server",
     "mocha": "node tools/test/run-mocha.js",
@@ -21,8 +15,9 @@
   "dependencies": {
     "assetmanager": "latest",
     "async": "latest",
-    "bower": "latest",
     "body-parser": "latest",
+    "bower": "latest",
+    "cassandra-driver": "^2.2.2",
     "compression": "latest",
     "connect-flash": "latest",
     "consolidate": "latest",
@@ -30,11 +25,9 @@
     "errorhandler": "latest",
     "express": "latest",
     "forever": "latest",
-    "gridfs-stream": "latest",
     "jsonwebtoken": "latest",
     "lodash": "latest",
-    "meanio": "latest",
-    "mongoose": "latest",
+    "mean": "file:node_modules/meanio",
     "morgan": "latest",
     "ms": "latest",
     "nodemailer": "latest",

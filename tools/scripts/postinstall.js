@@ -1,3 +1,5 @@
+'use strict';
+
 var fs = require('fs'),
     npm = require('npm'),
     path = require('path'),
@@ -101,7 +103,7 @@ function install(module, options) {
         });
       });
     });
-};
+}
 
 function packagesMeanJson(source) {
   // Load mean.json
@@ -130,7 +132,7 @@ function loadPackageJson(path, callback) {
       return callback(err);
     }
   });
-};
+}
 
 
 function packagesNpmInstall(source) {
