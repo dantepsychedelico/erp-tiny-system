@@ -27,7 +27,7 @@
     "forever": "latest",
     "jsonwebtoken": "latest",
     "lodash": "latest",
-    "meanio": "git+ssh://git@sufserver:9527/opt/meanio.git#cassandra",
+    "meanio": "git+http://192.168.0.50:10080/root/meanio.git#0.8.84",
     "morgan": "latest",
     "ms": "latest",
     "nodemailer": "latest",
