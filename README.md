@@ -1,4 +1,4 @@
-# MEANIO (alpha-info version)
+# ERP tiny system
 
 ## Sqlite Version
 
