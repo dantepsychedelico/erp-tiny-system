@@ -67,7 +67,7 @@ gulp.task('devServe', ['env:development'], function () {
     ext: 'html js',
     env: { 
       'NODE_ENV': 'development', 
-      'DATABASE': 'cassandra'
+      'DATABASE': 'sqlite3'
     },
     ignore: ['node_modules/', 'bower_components/', 'logs/', 'packages/*/*/public/assets/lib/', 'packages/*/*/node_modules/', '.DS_Store', '**/.DS_Store', '.bower-*', '**/.bower-*'],
     nodeArgs: ['--debug=' + (process.env.DEBUG_PORT || 5858 ), '--harmony'],

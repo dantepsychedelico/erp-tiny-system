@@ -26,8 +26,7 @@
     "forever": "latest",
     "jsonwebtoken": "latest",
     "lodash": "latest",
-    "meanio": "git+http://192.168.0.50:10080/root/meanio.git#0.8.84",
-    "jsonwebtoken": "latest",
+    "meanio": "file:node_modules/meanio",
     "morgan": "latest",
     "ms": "latest",
     "nodemailer": "latest",
@@ -42,6 +41,7 @@
     "request": "latest",
     "serve-favicon": "latest",
     "shelljs": "latest",
+    "sqlite3": "^3.1.1",
     "swig": "latest",
     "view-helpers": "latest"
   },

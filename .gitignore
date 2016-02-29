@@ -79,3 +79,5 @@ modules/views/
 # Mean PID
 # -------------------
 mean.pid
+
+db/
