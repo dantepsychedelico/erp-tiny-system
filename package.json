@@ -27,6 +27,7 @@
     "jsonwebtoken": "latest",
     "lodash": "latest",
     "meanio": "git+http://192.168.0.50:10080/root/meanio.git#0.8.84",
+    "jsonwebtoken": "latest",
     "morgan": "latest",
     "ms": "latest",
     "nodemailer": "latest",
