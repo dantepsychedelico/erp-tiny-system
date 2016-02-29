@@ -1,10 +1,13 @@
 'use strict';
 
 module.exports = {
-  db: [ process.env.DB_PORT_9042_TCP_ADDR || '192.168.0.50'],
+  db: 'mongodb://' + (process.env.DB_PORT_27017_TCP_ADDR || 'localhost') +'/'+(process.env.DB_PORT_27017_DATABASE || 'mean-dev'),
   debug: true,
   logging: {
     format: ':remote-addr :method :url :status :res[content-length] - :response-time ms'
+  },
+  mongoose: {
+    debug: process.env.MONGO_DEBUG ? JSON.parse(process.env.MONGO_DEBUG) : false
   },
   //  aggregate: 'whatever that is not false, because boolean false value turns aggregation off', //false
   aggregate: false,
