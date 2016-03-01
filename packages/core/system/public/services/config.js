@@ -23,4 +23,7 @@ angular.module('mean.system')
   }
 
   return new MeanConfigProvider();
+})
+.run(function($rootScope, $state) {
+      $rootScope.$state = $state;
 });
