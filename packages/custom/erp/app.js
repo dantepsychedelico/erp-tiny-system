@@ -14,6 +14,7 @@ ErpPackage.register(function(app, auth, database) {
     ErpPackage.routes(app, auth, database);
 
     ErpPackage.aggregateAsset('css', '../lib/ag-grid/dist/styles/theme-blue.css');
+    ErpPackage.aggregateAsset('css', '../lib/font-awesome/css/font-awesome.min.css');
     ErpPackage.aggregateAsset('js', '../lib/ag-grid/dist/ag-grid.min.js', {weight: -1});
     ErpPackage.angularDependencies(['agGrid']);
 
