@@ -1,6 +1,13 @@
 <div class="row">
     <div class="col-sm-12">
+        <div class="input-group pull-left col-sm-3">
+            <span class="input-group-addon" id="basic-addon1"><i class="fa fa-search"></i></span>
+            <input type="text" class="form-control" placeholder="Search" ng-model="search" ng-change="searchChange()">
+        </div>
         <div class="btn-group pull-right"> 
+            <button type="button" class="btn btn-default" aria-label="Left Align" ng-click="importExcel()">
+                <span class="fa fa-file-excel-o" aria-hidden="true"></span>
+            </button>
             <button type="button" class="btn btn-default" aria-label="Left Align" ng-click="addItem()">
                 <span class="fa fa-plus" aria-hidden="true"></span>
             </button>

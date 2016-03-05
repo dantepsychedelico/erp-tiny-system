@@ -7,7 +7,8 @@ angular.module('mean.erp')
         columnDefs: [
             {headerName: 'id', field: 'id'},
             {headerName: 'desc', field: 'desc'},
-        ]
+        ],
+        enableFilter: true
     };
     $scope.getItems = function() {
         return $http.get('/api/erp/items')
@@ -24,6 +25,11 @@ angular.module('mean.erp')
         });
     };
     $scope.editItem = function() {
+    };
+    $scope.searchChange = function() {
+        $scope.gridOptions.api.setQuickFilter($scope.search);
+    };
+    $scope.importExcel = function() {
     };
 }])
 .controller('erpManagerAddItem', ['$scope', '$http', '$uibModalInstance', function($scope, $http, $uibModalInstance) {
